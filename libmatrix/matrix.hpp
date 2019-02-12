@@ -103,6 +103,15 @@ public:
   friend Matrix<Type> operator*(Type var, Matrix<Type> &matrix) {
     return matrix*var;
   }
+  friend Matrix<Type> operator+(Matrix &other, Matrix<Type> &that) {
+   if (!that.dimEqualTo(other)) 
+    throw std::invalid_argument("Dimensions of both matrixes are different");
+   Matrix ret = Matrix(that);
+   for (int i=0; i < that.size; ++i) {
+     ret.value[i]+= other.value[i];
+   }
+   return ret;
+  }
 };
 
 template <typename Type> Matrix<Type>::Matrix(): size(0), rows(0), columns(0), value(nullptr) {}
@@ -198,7 +207,6 @@ template <typename Type> Matrix<Type> &Matrix<Type>::operator=(const Matrix &oth
   }
   return *this;
 }
-
 template <typename Type> Matrix<Type> Matrix<Type>::operator+(const Matrix &other) {
   if (!this->dimEqualTo(other)) 
     throw std::invalid_argument("Dimensions of both matrixes are different");

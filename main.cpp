@@ -28,13 +28,17 @@ int main(int argc, char *argv[])
   Matrix<int> matInt2 = Matrix<int>({{1, 2, 3}});
   Matrix<int> matInt3 = Matrix<int>({{4}, {5}, {6}});
   Matrix<int> product = matInt2%matInt3;
-  cout << matInt2 << endl;
-  cout << matInt3 << endl;
-  cout << product << endl;
-  cout << (matInt0 += 1) << endl;
-  cout << 1 + matInt0 << endl;
-  cout << 10 + (p+= 5) << endl;
-  cout << p << endl;
+  Matrix<float> matFloat0 = Matrix<float>({{1.2, 2.3, 4.5}});
+  cout << matFloat0;
+ 
+  // cout << matInt2
+  //                                                                 << endl;
+  // cout << matInt3 << endl;
+  // cout << product << endl;
+  // cout << (matInt0 += 1) << endl;
+  // cout << 1 + matInt0 << endl;
+  // cout << 10 + (p+= 5) << endl;
+  // cout << p << endl;
   return 0;
 }
 
