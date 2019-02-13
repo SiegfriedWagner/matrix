@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "../../libmatrix/matrix.hpp" // TODO: Check if can be resolved better
+#include "matrix.hpp" // TODO: Check if can be resolved better
 class MatrixIntTest : public ::testing::Test {
 public:
   Matrix<int> tested;
