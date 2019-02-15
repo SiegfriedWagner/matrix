@@ -17,6 +17,7 @@ protected:
   size_t size;
   Type *value;
   void resize(size_t columns, size_t rows);
+  template<typename X> bool dimEqualTo(const Matrix<X> &other) const;
   inline Type *_begin() { return value; }
   inline Type *_end() { return value+size; }
 public:
@@ -73,10 +74,6 @@ public:
     return matrix*var;
   }
   
-  template <typename X> inline bool dimEqualTo(const Matrix<X> &other) {
-    return this->GetColumns() == other.GetColumns() && this->GetRows() == other.GetRows();
-  }
-
   
   friend std::ostream &operator<<(std::ostream &o, const Matrix<Type> &matrix) {
     o << "[";
@@ -124,6 +121,10 @@ public:
     return o;
   }
 };
+
+template<typename Type>  template <typename X> inline bool Matrix<Type>::dimEqualTo(const Matrix<X> &other) const {
+    return this->GetColumns() == other.GetColumns() && this->GetRows() == other.GetRows();
+  }
 
 template <typename Type> void Matrix<Type>::resize(size_t columns, size_t rows) {
   this->columns = columns;
