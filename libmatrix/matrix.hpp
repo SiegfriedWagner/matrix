@@ -9,8 +9,7 @@
 #include <exception>
 #include <type_traits>
 
-template <class Type>
-class Matrix {
+template <class Type> class Matrix {
 protected:
   size_t rows;
   size_t columns;
@@ -73,8 +72,7 @@ public:
   friend Matrix<Type> operator*(Type var, Matrix<Type> &matrix) {
     return matrix*var;
   }
-  
-  
+   
   friend std::ostream &operator<<(std::ostream &o, const Matrix<Type> &matrix) {
     o << "[";
     for (int r = 0; r < matrix.rows; ++r) {
