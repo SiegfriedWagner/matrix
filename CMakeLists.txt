@@ -25,6 +25,7 @@ add_executable(myApp
 # Specify here the libraries this program depends on
 target_link_libraries(myApp
   libmatrix
-)
-
+  )
+set(CMAKE_CXX_COMPILER /usr/bin/g++)
+#message(STATUS "${CMAKE_CXX_COMPILER}")
 # install(TARGETS myApp DESTINATION bin)

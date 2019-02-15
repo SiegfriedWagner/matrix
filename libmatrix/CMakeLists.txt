@@ -1,5 +1,5 @@
 
-set(libmatrix_SRCS matrix.hpp)
+set(libmatrix_SRCS matrix.hpp m_exceptions.cpp)
 
 # Declare the library
 add_library(libmatrix STATIC
